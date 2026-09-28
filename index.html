@@ -33,6 +33,10 @@ a{color:#A8431F}a:hover{color:#7E3015}
 @supports (animation-timeline: view()){.pack-item{animation:pack-out linear both;animation-timeline:view();animation-range:entry 20% cover 35%}}
 @keyframes pack-out{from{opacity:0;transform:translateX(-150px) scale(.8)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){.pack-item{animation:none;transition:none}}
+@supports (animation-timeline: view()){.award-item{animation:award-up linear both;animation-timeline:view();animation-range:entry 15% cover 35%}.award-item:nth-child(even){animation-range:entry 30% cover 42%}.award-item .award-flag{transform-origin:20% 100%;animation:flag-plant linear both;animation-timeline:view();animation-range:entry 30% cover 45%}}
+@keyframes award-up{from{opacity:0;transform:translateY(90px) scale(.9)}to{opacity:1;transform:none}}
+@keyframes flag-plant{from{opacity:0;transform:translateY(-24px) rotate(-35deg)}60%{opacity:1;transform:rotate(8deg)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.award-item,.award-item .award-flag{animation:none}}
 @keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
 @media (prefers-reduced-motion: reduce){.compass-link .sway{animation:none}.compass-link .needle{animation:none}}
 </style>
@@ -47,9 +51,9 @@ a{color:#A8431F}a:hover{color:#7E3015}
 </a>
 <nav style="display: flex; align-items: center; gap: 36px; font-size: 15px;">
 <a href="#route" style="color: #1F2A24; text-decoration: none;">The route</a>
-<a href="#waypoints" style="color: #1F2A24; text-decoration: none;">Waypoints</a>
-<a href="#kit" style="color: #1F2A24; text-decoration: none;">Field kit</a>
-<a href="#basecamp" style="color: #1F2A24; text-decoration: none;">Basecamp</a>
+<a href="#waypoints" style="color: #1F2A24; text-decoration: none; display: flex; flex-direction: column; align-items: center; line-height: 1.25;"><span>Trails</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5E6358;">(projects)</span></a>
+<a href="#kit" style="color: #1F2A24; text-decoration: none; display: flex; flex-direction: column; align-items: center; line-height: 1.25;"><span>Field kit</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5E6358;">(skills)</span></a>
+<a href="#basecamp" style="color: #1F2A24; text-decoration: none; display: flex; flex-direction: column; align-items: center; line-height: 1.25;"><span>Basecamp</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5E6358;">(inspiration)</span></a>
 <a href="assets/Alina-Soh-Resume.pdf" target="_blank" rel="noopener" style="padding: 12px 20px; border: 1.5px solid #1F2A24; border-radius: 999px; color: #1F2A24; text-decoration: none; font-weight: 500;">Résumé (PDF)</a>
 </nav>
 </header>
@@ -108,11 +112,7 @@ a{color:#A8431F}a:hover{color:#7E3015}
 </a>
 
 </div>
-<div style="position: absolute; left: -1px; display: flex; gap: 32px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358; top: 306px">
-<div style="display: flex; align-items: center; gap: 8px;"><svg width="28" height="6" aria-hidden="true"><line x1="0" y1="3" x2="28" y2="3" stroke="#C2502A" stroke-width="3" stroke-dasharray="6 4"></line></svg>Trail so far</div>
-<div style="display: flex; align-items: center; gap: 8px;"><svg width="28" height="6" aria-hidden="true"><line x1="0" y1="3" x2="28" y2="3" stroke="#C2502A" stroke-width="3" stroke-dasharray="1 6" stroke-linecap="round"></line></svg>Uncharted</div>
-<div style="display: flex; align-items: center; gap: 8px;"><svg width="28" height="10" aria-hidden="true"><line x1="0" y1="5" x2="28" y2="5" stroke="#CFC6AE"></line></svg>Contour = 1 thing learned</div>
-</div></div>
+</div>
 
 
 </section>
@@ -229,7 +229,7 @@ a{color:#A8431F}a:hover{color:#7E3015}
 <svg width="420" height="220" viewBox="0 0 420 220" fill="none" aria-hidden="true" style="position: absolute; right: 0; top: 0; z-index: -1; pointer-events: none;"><g stroke="#DDD5C1" stroke-width="1"><path d="M421 72 Q432 95 421 118 Q411 141 374 156 Q337 171 293 166 Q248 162 208 151 Q168 141 145 118 Q121 95 144 72 Q166 48 205 34 Q243 20 292 17 Q340 14 375 32 Q410 49 421 72 Z"></path><path d="M455 66 Q468 95 455 124 Q442 153 396 171 Q349 190 294 185 Q238 179 187 166 Q136 153 107 124 Q77 95 106 65 Q134 36 183 18 Q231 0 292 -3 Q353 -6 397 16 Q441 38 455 66 Z"></path><path d="M489 60 Q505 95 489 130 Q473 164 417 187 Q362 210 294 203 Q227 196 166 181 Q105 165 69 130 Q33 95 68 59 Q102 24 160 2 Q219 -19 293 -23 Q366 -27 419 -1 Q473 26 489 60 Z"></path></g><path d="M386 78 Q391 95 387 113 Q383 130 352 138 Q321 145 287 149 Q254 154 225 142 Q197 130 190 113 Q182 95 189 77 Q197 60 226 49 Q255 39 288 43 Q320 46 351 53 Q381 61 386 78 Z" fill="#DCE5CD" stroke="#C3D1B2" stroke-width="1" stroke-dasharray="3 4"></path><g transform="translate(270 78) scale(1.04)"><path d="M0 -18 L8 -4 L-8 -4 Z M0 -11 L10 5 L-10 5 Z" fill="#7E9A73" stroke="#3E5A3B" stroke-width="1" stroke-linejoin="round"></path><path d="M0 5 V10" stroke="#3E5A3B" stroke-width="1.5" stroke-linecap="round"></path></g><g transform="translate(221 88) scale(1.12)"><circle cx="0" cy="-6" r="9" fill="#9DB38F" stroke="#3E5A3B" stroke-width="1"></circle><path d="M0 3 V10" stroke="#3E5A3B" stroke-width="1.5" stroke-linecap="round"></path></g><g transform="translate(308 100) scale(1.03)"><path d="M0 -18 L8 -4 L-8 -4 Z M0 -11 L10 5 L-10 5 Z" fill="#7E9A73" stroke="#3E5A3B" stroke-width="1" stroke-linejoin="round"></path><path d="M0 5 V10" stroke="#3E5A3B" stroke-width="1.5" stroke-linecap="round"></path></g><g transform="translate(332 124) scale(1.02)"><path d="M0 -18 L8 -4 L-8 -4 Z M0 -11 L10 5 L-10 5 Z" fill="#7E9A73" stroke="#3E5A3B" stroke-width="1" stroke-linejoin="round"></path><path d="M0 5 V10" stroke="#3E5A3B" stroke-width="1.5" stroke-linecap="round"></path></g></svg>
 <div style="display: flex; justify-content: space-between; align-items: flex-end;">
 <div style="display: flex; flex-direction: column; gap: 12px;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C2502A;">02 — Waypoints</div>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C2502A;">02 — Trails</div>
 <h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 52px; font-weight: 600; letter-spacing: -0.01em;">Things I've built along the way</h2>
 </div>
 <div style="display: flex; gap: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #3B443C;">
@@ -241,29 +241,79 @@ a{color:#A8431F}a:hover{color:#7E3015}
 
 <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
 
-<a href="lidar.html" class="wp-card" style="display: flex; flex-direction: column; gap: 18px; padding: 24px; border-radius: 20px; background: #FBF9F3; border: 1px solid #D9D1BC; box-sizing: border-box; text-decoration: none; color: #1F2A24;">
-<div style="height: 260px; border-radius: 16px; background: #E6E0CF; border: 1px dashed #B9AF95; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5E6358;">[Photo: robot finishing the course]</div>
-<div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;"><svg width="12" height="12" aria-hidden="true"><path d="M6 1 L11 11 L1 11 Z" fill="#1F2A24"></path></svg>WP-01 · Robotics · Embedded</div>
-<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 600; line-height: 1.15;">LiDAR obstacle-avoidance robot</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B443C;">Designed and soldered the circuit boards, 3D printed the parts and wrote the firmware.</p>
-<span style="font-weight: 500; color: #A8431F;">Read the trail log →</span>
-</a>
-
 <article class="wp-card" style="display: flex; flex-direction: column; gap: 18px; padding: 24px; border-radius: 20px; background: #FBF9F3; border: 1px solid #D9D1BC; box-sizing: border-box;">
-<div style="height: 260px; border-radius: 16px; background: #E6E0CF; border: 1px dashed #B9AF95; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5E6358;">[CAD render: flux chamber on drone]</div>
-<div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;"><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="none" stroke="#1F2A24" stroke-width="2" stroke-dasharray="2 2"></circle></svg>WP-02 · Engineering design · In progress</div>
+<img src="assets/methane-chamber.png" alt="CAD render of a sensor module being fitted into a stainless steel flux chamber with three spherical floats" width="886" height="768" style="display: block; width: 100%; height: 260px; object-fit: contain; background: #FFFFFF; border-radius: 16px; border: 1px solid #D9D1BC; box-sizing: border-box; padding: 8px;">
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;"><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="none" stroke="#1F2A24" stroke-width="2" stroke-dasharray="2 2"></circle></svg>WP-01 · Engineering design · In progress</div>
 <h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 600; line-height: 1.15;">Drone-deployed methane flux chamber</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B443C;">Measuring methane from waste lagoons to meet environmental regulations.</p>
-<span style="font-weight: 500; color: #A8431F;">Follow along →</span>
+<a href="methane.html" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; color: #A8431F; text-decoration: none;">Follow along →</a>
 </article>
 
 <article class="wp-card" style="display: flex; flex-direction: column; gap: 18px; padding: 24px; border-radius: 20px; background: #FBF9F3; border: 1px solid #D9D1BC; box-sizing: border-box;">
 <img src="assets/pro-plant-diagram.png" alt="Diagram of a pressure-retarded osmosis plant: feed and draw solutions flow in opposite directions through a membrane module, with circulation pumps, a hydro turbine and a pressure exchanger" width="1470" height="958" style="display: block; width: 100%; height: 260px; object-fit: contain; background: #FFFFFF; border-radius: 16px; border: 1px solid #D9D1BC; box-sizing: border-box; padding: 8px;">
-<div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;"><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="#4E6B4A"></circle></svg>WP-03 · Sustainability · Research</div>
-<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 600; line-height: 1.15;">Can salt water compete with solar?</h3>
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;"><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="#4E6B4A"></circle></svg>WP-02 · Sustainability · Research</div>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 600; line-height: 1.15;">Can energy from salt water compete with solar energy?</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B443C;">An economic model of a 1 MW pressure-retarded osmosis plant, testing how membrane innovations change its cost of electricity.</p>
 <a href="assets/Alina-Soh-PRO-LCOE-paper.pdf" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; color: #A8431F; text-decoration: none;">Read the paper (PDF) ↗</a>
 </article>
+
+<a href="lidar.html" class="wp-card" style="display: flex; flex-direction: column; gap: 18px; padding: 24px; border-radius: 20px; background: #FBF9F3; border: 1px solid #D9D1BC; box-sizing: border-box; text-decoration: none; color: #1F2A24;">
+<div style="height: 260px; border-radius: 16px; background: #FBF9F3; border: 1px solid #D9D1BC; box-sizing: border-box; padding: 12px 16px;"><svg width="100%" height="100%" preserveAspectRatio="xMidYMid meet" style="display: block;" viewBox="0 0 400 300" fill="none" role="img" aria-label="Pen sketch of a small LiDAR robot: a round base plate carrying a circuit board, a spinning LiDAR sensor on standoffs, and a spoked wheel">
+<defs><filter id="robot-sketch-card" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2"></feDisplacementMap></filter></defs>
+<g filter="url(#robot-sketch-card)" stroke="#1F2A24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+<path d="M34 270 C110 262 290 278 372 266" stroke-width="1" opacity="0.45"></path>
+<path d="M50 222 C50 244 118 262 200 262 C282 262 350 244 350 222 L350 234 C350 256 282 274 200 274 C118 274 50 256 50 234 Z" fill="#F3EFE4"></path>
+<ellipse cx="200" cy="222" rx="150" ry="40" fill="#F3EFE4"></ellipse>
+<ellipse cx="202" cy="224" rx="146" ry="37" stroke-width="1" opacity="0.45"></ellipse>
+<path d="M300 256 L312 250 M290 260 L302 254 M280 263 L292 257 M320 250 L332 244 M334 244 L344 238" stroke-width="1" opacity="0.6"></path>
+<circle cx="92" cy="238" r="3" stroke-width="1.2"></circle><circle cx="318" cy="238" r="3" stroke-width="1.2"></circle>
+<path d="M258 150 L336 158 L336 214 L258 212 Z" fill="#F3EFE4"></path>
+<path d="M336 158 L352 152 L352 206 L336 214" fill="#F3EFE4"></path>
+<path d="M258 150 L274 144 L352 152"></path>
+<path d="M340 164 L348 160 M340 176 L348 172 M340 188 L348 184 M340 200 L348 196" stroke-width="1" opacity="0.6"></path>
+<circle cx="297" cy="182" r="9" stroke-width="1.4"></circle><circle cx="297" cy="182" r="3" stroke-width="1"></circle>
+<path d="M140 224 L140 152 M148 226 L148 154" stroke-width="1.6"></path>
+<path d="M178 244 L178 166 M186 246 L186 168" stroke-width="1.6"></path>
+<path d="M258 236 L258 160 M266 234 L266 158" stroke-width="1.6"></path>
+<path d="M58 176 L214 150 L252 172 L96 200 Z" fill="#F3EFE4"></path>
+<path d="M58 176 L58 184 L96 208 L252 180 L252 172" fill="#F3EFE4"></path>
+<path d="M62 182 L96 204 M100 205 L248 178" stroke-width="1" opacity="0.5"></path>
+<path d="M92 170 L150 160 L166 170 L108 180 Z" fill="#FBF9F3" stroke-width="1.6"></path>
+<path d="M112 172 L148 166" stroke-width="1" opacity="0.6"></path>
+<path d="M98 190 L100 196 M106 189 L108 195 M114 188 L116 194 M122 186 L124 192 M130 185 L132 191 M138 184 L140 190 M146 182 L148 188 M154 181 L156 187" stroke-width="1" opacity="0.7"></path>
+<path d="M150 186 L210 176 L222 184 L162 194 Z" fill="#DCE5CD" stroke-width="1.6"></path>
+<path d="M162 194 L162 202 L222 192 L222 184" fill="#C9D6BC" stroke-width="1.6"></path>
+<circle cx="170" cy="188" r="3" stroke-width="1.2"></circle><circle cx="186" cy="185" r="3" stroke-width="1.2"></circle><circle cx="202" cy="183" r="3" stroke-width="1.2"></circle>
+<path d="M68 172 L100 166 L110 172 L78 178 Z" fill="#DCE5CD" stroke-width="1.6"></path>
+<circle cx="80" cy="172" r="2.5" stroke-width="1"></circle><circle cx="94" cy="170" r="2.5" stroke-width="1"></circle>
+<path d="M172 200 C170 226 150 232 160 250 C170 262 196 252 190 236" stroke-width="1.4"></path>
+<path d="M188 198 C192 222 214 230 206 248 C198 262 176 256 182 240" stroke="#C2502A" stroke-width="1.6"></path>
+<path d="M204 196 C214 216 232 222 226 238" stroke-width="1.2" stroke-dasharray="3 3"></path>
+<path d="M126 150 C126 164 170 174 222 174 C274 174 318 164 318 150 C318 136 274 126 222 126 C170 126 126 136 126 150 Z" fill="#F3EFE4"></path>
+<path d="M142 150 C142 160 178 166 222 166 C266 166 302 160 302 150" stroke-width="1" opacity="0.5"></path>
+<path d="M150 82 L150 116 C150 130 182 140 222 140 C262 140 294 130 294 116 L294 82" fill="#E4DED0"></path>
+<path d="M150 116 C150 130 182 140 222 140 C262 140 294 130 294 116" stroke-width="2.2"></path>
+<path d="M150 100 C150 114 182 124 222 124 C262 124 294 114 294 100" stroke-width="1.2" opacity="0.7"></path>
+<ellipse cx="222" cy="82" rx="72" ry="20" fill="#F3EFE4"></ellipse>
+<ellipse cx="224" cy="83" rx="68" ry="18" stroke-width="1" opacity="0.45"></ellipse>
+<ellipse cx="222" cy="80" rx="11" ry="4.5" fill="#C2502A" stroke-width="1.4"></ellipse>
+<circle cx="190" cy="74" r="2.5" stroke-width="1.1"></circle><circle cx="258" cy="90" r="2.5" stroke-width="1.1"></circle>
+<path d="M170 104 C170 98 184 98 190 100 C196 102 196 112 190 113 C182 114 170 112 170 104 Z" fill="#1F2A24" opacity="0.85"></path>
+<path d="M234 108 C236 102 258 100 262 104 C266 108 262 116 254 117 C244 118 232 116 234 108 Z" fill="#1F2A24" opacity="0.85"></path>
+<path d="M272 92 L284 88 M270 100 L286 95 M268 110 L288 104 M270 120 L286 114 M276 128 L284 124" stroke-width="1" opacity="0.6"></path>
+<path d="M156 92 L162 90 M154 104 L162 101" stroke-width="1" opacity="0.5"></path>
+<ellipse cx="300" cy="222" rx="30" ry="44" fill="#F3EFE4" stroke-width="2.4"></ellipse>
+<ellipse cx="300" cy="222" rx="22" ry="34" fill="#FBF9F3" stroke="#C2502A" stroke-width="2"></ellipse>
+<ellipse cx="300" cy="222" rx="5" ry="7" fill="#C2502A" stroke="#C2502A" stroke-width="1.2"></ellipse>
+<path d="M300 188 L300 256 M278 222 L322 222 M285 197 L315 247 M315 197 L285 247 M281 207 L319 237 M319 207 L281 237" stroke="#C2502A" stroke-width="1.3" opacity="0.9"></path>
+<path d="M324 196 C334 210 334 236 324 250" stroke-width="1" opacity="0.5"></path>
+</g>
+</svg></div>
+<div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;"><svg width="12" height="12" aria-hidden="true"><path d="M6 1 L11 11 L1 11 Z" fill="#1F2A24"></path></svg>WP-03 · Robotics · Embedded</div>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 28px; font-weight: 600; line-height: 1.15;">LiDAR obstacle-avoidance robot</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B443C;">Designed and soldered the circuit boards, 3D printed the parts and wrote the firmware.</p>
+<span style="font-weight: 500; color: #A8431F;">Read the trail log →</span>
+</a>
 
 <article class="wp-card" style="display: flex; flex-direction: column; gap: 18px; padding: 24px; border-radius: 20px; background: #FBF9F3; border: 1px solid #D9D1BC; box-sizing: border-box;">
 <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;"><svg width="12" height="12" aria-hidden="true"><path d="M6 1 L11 11 L1 11 Z" fill="#1F2A24"></path></svg>WP-04 · 3D printing · Education</div>
@@ -353,10 +403,10 @@ a{color:#A8431F}a:hover{color:#7E3015}
 <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #C2502A;">04 — Flags planted</div>
 <h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 44px; font-weight: 600; letter-spacing: -0.01em;">Awards</h2>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
-<div style="padding: 20px; border-radius: 14px; background: #FBF9F3; border: 1px solid #D9D1BC; display: flex; gap: 16px; align-items: center;"><svg width="36" height="44" viewBox="0 0 36 44" fill="none" aria-hidden="true" style="flex-shrink: 0;"><path d="M18 1 V5" stroke="#1F2A24" stroke-width="1.5" stroke-linecap="round"></path><circle cx="18" cy="6.5" r="2" stroke="#1F2A24" stroke-width="1.5"></circle><path d="M18 8.5 L6 16 M18 8.5 L30 16" stroke="#1F2A24" stroke-width="1.2" stroke-linecap="round"></path><path d="M6 16 H30 V41 H6 Z" fill="#FFFFFF"></path><path d="M30 16 V41 H6 Z" fill="#E8672C"></path><path d="M6 16 H30 V41 H6 Z" stroke="#1F2A24" stroke-width="1.5" stroke-linejoin="round"></path></svg><div style="display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;">2024 · 2025</div><div style="font-size: 17px; font-weight: 600;">A*STAR Science Award</div><div style="font-size: 14px; line-height: 1.5; color: #5E6358;">Two-year award for high school students with outstanding science and maths results</div></div></div>
-<div style="padding: 20px; border-radius: 14px; background: #FBF9F3; border: 1px solid #D9D1BC; display: flex; gap: 16px; align-items: center;"><svg width="36" height="44" viewBox="0 0 36 44" fill="none" aria-hidden="true" style="flex-shrink: 0;"><path d="M18 1 V5" stroke="#1F2A24" stroke-width="1.5" stroke-linecap="round"></path><circle cx="18" cy="6.5" r="2" stroke="#1F2A24" stroke-width="1.5"></circle><path d="M18 8.5 L6 16 M18 8.5 L30 16" stroke="#1F2A24" stroke-width="1.2" stroke-linecap="round"></path><path d="M6 16 H30 V41 H6 Z" fill="#FFFFFF"></path><path d="M30 16 V41 H6 Z" fill="#E8672C"></path><path d="M6 16 H30 V41 H6 Z" stroke="#1F2A24" stroke-width="1.5" stroke-linejoin="round"></path></svg><div style="display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;">2024</div><div style="font-size: 17px; font-weight: 600;">Silver, Nanyang Research Program</div></div></div>
-<div style="padding: 20px; border-radius: 14px; background: #FBF9F3; border: 1px solid #D9D1BC; display: flex; gap: 16px; align-items: center;"><svg width="36" height="44" viewBox="0 0 36 44" fill="none" aria-hidden="true" style="flex-shrink: 0;"><path d="M18 1 V5" stroke="#1F2A24" stroke-width="1.5" stroke-linecap="round"></path><circle cx="18" cy="6.5" r="2" stroke="#1F2A24" stroke-width="1.5"></circle><path d="M18 8.5 L6 16 M18 8.5 L30 16" stroke="#1F2A24" stroke-width="1.2" stroke-linecap="round"></path><path d="M6 16 H30 V41 H6 Z" fill="#FFFFFF"></path><path d="M30 16 V41 H6 Z" fill="#E8672C"></path><path d="M6 16 H30 V41 H6 Z" stroke="#1F2A24" stroke-width="1.5" stroke-linejoin="round"></path></svg><div style="display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;">2025</div><div style="font-size: 17px; font-weight: 600;">Silver, Singapore Chemistry League</div></div></div>
-<div style="padding: 20px; border-radius: 14px; background: #FBF9F3; border: 1px solid #D9D1BC; display: flex; gap: 16px; align-items: center;"><svg width="36" height="44" viewBox="0 0 36 44" fill="none" aria-hidden="true" style="flex-shrink: 0;"><path d="M18 1 V5" stroke="#1F2A24" stroke-width="1.5" stroke-linecap="round"></path><circle cx="18" cy="6.5" r="2" stroke="#1F2A24" stroke-width="1.5"></circle><path d="M18 8.5 L6 16 M18 8.5 L30 16" stroke="#1F2A24" stroke-width="1.2" stroke-linecap="round"></path><path d="M6 16 H30 V41 H6 Z" fill="#FFFFFF"></path><path d="M30 16 V41 H6 Z" fill="#E8672C"></path><path d="M6 16 H30 V41 H6 Z" stroke="#1F2A24" stroke-width="1.5" stroke-linejoin="round"></path></svg><div style="display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;">2024</div><div style="font-size: 17px; font-weight: 600;">YMCA Youth For Causes Distinction; Public Outreach Award</div></div></div>
+<div class="award-item" style="padding: 20px; border-radius: 14px; background: #FBF9F3; border: 1px solid #D9D1BC; display: flex; gap: 16px; align-items: center;"><svg class="award-flag" width="36" height="44" viewBox="0 0 36 44" fill="none" aria-hidden="true" style="flex-shrink: 0;"><path d="M18 1 V5" stroke="#1F2A24" stroke-width="1.5" stroke-linecap="round"></path><circle cx="18" cy="6.5" r="2" stroke="#1F2A24" stroke-width="1.5"></circle><path d="M18 8.5 L6 16 M18 8.5 L30 16" stroke="#1F2A24" stroke-width="1.2" stroke-linecap="round"></path><path d="M6 16 H30 V41 H6 Z" fill="#FFFFFF"></path><path d="M30 16 V41 H6 Z" fill="#E8672C"></path><path d="M6 16 H30 V41 H6 Z" stroke="#1F2A24" stroke-width="1.5" stroke-linejoin="round"></path></svg><div style="display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;">2024 · 2025</div><div style="font-size: 17px; font-weight: 600;">A*STAR Science Award</div><div style="font-size: 14px; line-height: 1.5; color: #5E6358;">Two-year award for high school students with outstanding science and maths results</div></div></div>
+<div class="award-item" style="padding: 20px; border-radius: 14px; background: #FBF9F3; border: 1px solid #D9D1BC; display: flex; gap: 16px; align-items: center;"><svg class="award-flag" width="36" height="44" viewBox="0 0 36 44" fill="none" aria-hidden="true" style="flex-shrink: 0;"><path d="M18 1 V5" stroke="#1F2A24" stroke-width="1.5" stroke-linecap="round"></path><circle cx="18" cy="6.5" r="2" stroke="#1F2A24" stroke-width="1.5"></circle><path d="M18 8.5 L6 16 M18 8.5 L30 16" stroke="#1F2A24" stroke-width="1.2" stroke-linecap="round"></path><path d="M6 16 H30 V41 H6 Z" fill="#FFFFFF"></path><path d="M30 16 V41 H6 Z" fill="#E8672C"></path><path d="M6 16 H30 V41 H6 Z" stroke="#1F2A24" stroke-width="1.5" stroke-linejoin="round"></path></svg><div style="display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;">2024</div><div style="font-size: 17px; font-weight: 600;">Silver, Nanyang Research Program</div></div></div>
+<div class="award-item" style="padding: 20px; border-radius: 14px; background: #FBF9F3; border: 1px solid #D9D1BC; display: flex; gap: 16px; align-items: center;"><svg class="award-flag" width="36" height="44" viewBox="0 0 36 44" fill="none" aria-hidden="true" style="flex-shrink: 0;"><path d="M18 1 V5" stroke="#1F2A24" stroke-width="1.5" stroke-linecap="round"></path><circle cx="18" cy="6.5" r="2" stroke="#1F2A24" stroke-width="1.5"></circle><path d="M18 8.5 L6 16 M18 8.5 L30 16" stroke="#1F2A24" stroke-width="1.2" stroke-linecap="round"></path><path d="M6 16 H30 V41 H6 Z" fill="#FFFFFF"></path><path d="M30 16 V41 H6 Z" fill="#E8672C"></path><path d="M6 16 H30 V41 H6 Z" stroke="#1F2A24" stroke-width="1.5" stroke-linejoin="round"></path></svg><div style="display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;">2025</div><div style="font-size: 17px; font-weight: 600;">Silver, Singapore Chemistry League</div></div></div>
+<div class="award-item" style="padding: 20px; border-radius: 14px; background: #FBF9F3; border: 1px solid #D9D1BC; display: flex; gap: 16px; align-items: center;"><svg class="award-flag" width="36" height="44" viewBox="0 0 36 44" fill="none" aria-hidden="true" style="flex-shrink: 0;"><path d="M18 1 V5" stroke="#1F2A24" stroke-width="1.5" stroke-linecap="round"></path><circle cx="18" cy="6.5" r="2" stroke="#1F2A24" stroke-width="1.5"></circle><path d="M18 8.5 L6 16 M18 8.5 L30 16" stroke="#1F2A24" stroke-width="1.2" stroke-linecap="round"></path><path d="M6 16 H30 V41 H6 Z" fill="#FFFFFF"></path><path d="M30 16 V41 H6 Z" fill="#E8672C"></path><path d="M6 16 H30 V41 H6 Z" stroke="#1F2A24" stroke-width="1.5" stroke-linejoin="round"></path></svg><div style="display: flex; flex-direction: column; gap: 8px;"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5E6358;">2024</div><div style="font-size: 17px; font-weight: 600;">YMCA Youth For Causes Distinction; Public Outreach Award</div></div></div>
 </div>
 </div>
 </section>
@@ -377,8 +427,8 @@ a{color:#A8431F}a:hover{color:#7E3015}
 <h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 44px; font-weight: 600; letter-spacing: -0.01em;">Inspiration</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.7; color: #3B443C;">For three years I helped lead my school's outdoors club, where we bouldered, cooked outdoors, cycled and kayaked. It's also where I found orienteering: making your way through unfamiliar ground to a string of checkpoints, with nothing but a map.</p>
 <p style="margin: 0; font-size: 17px; line-height: 1.7; color: #3B443C;">My first forest course was in China, and I got completely lost. Working out where I was and finding my way back turned out to be the best part. That's the idea behind this site: every stop so far has been a checkpoint, and I'm still reading the map.</p>
-
-<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 8px;">
+</div>
+<div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 12px;">
 <div style="width: 100%; overflow: hidden; border-radius: 20px;">
 <div data-t-style="display: flex; width: 400%; transform: translateX(-{{photoShift}}%); transition: transform 450ms cubic-bezier(0.2, 0.7, 0.2, 1);">
 <img src="assets/gunung-ledang-summit.jpg" alt="A group at the summit of Gunung Ledang, 1,276 m" width="1280" height="960" style="display: block; width: 25%; flex-shrink: 0; height: auto; aspect-ratio: 1280 / 960; object-fit: cover;">
@@ -401,17 +451,6 @@ a{color:#A8431F}a:hover{color:#7E3015}
 </div>
 </div>
 </div>
-</div>
-<div style="grid-column: 7 / span 6; display: flex; flex-direction: column; gap: 20px; padding: 40px; border-radius: 20px; background: #1F2A24; color: #F3EFE4;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #E9A07F;">How I move</div>
-<div style="display: flex; flex-direction: column; gap: 0;">
-<div style="display: flex; align-items: baseline; gap: 20px; padding: 14px 0; border-bottom: 1px solid #3A463E;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #A9B2A6;">01</span><span style="font-family: 'Fraunces', Georgia, serif; font-size: 28px;">Understand</span></div>
-<div style="display: flex; align-items: baseline; gap: 20px; padding: 14px 0; border-bottom: 1px solid #3A463E;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #A9B2A6;">02</span><span style="font-family: 'Fraunces', Georgia, serif; font-size: 28px;">Design</span></div>
-<div style="display: flex; align-items: baseline; gap: 20px; padding: 14px 0; border-bottom: 1px solid #3A463E;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #A9B2A6;">03</span><span style="font-family: 'Fraunces', Georgia, serif; font-size: 28px;">Build</span></div>
-<div style="display: flex; align-items: baseline; gap: 20px; padding: 14px 0; border-bottom: 1px solid #3A463E;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #A9B2A6;">04</span><span style="font-family: 'Fraunces', Georgia, serif; font-size: 28px;">Test, and find out why it failed</span></div>
-<div style="display: flex; align-items: baseline; gap: 20px; padding: 14px 0;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #E9A07F;">05</span><span style="font-family: 'Fraunces', Georgia, serif; font-size: 28px; color: #E9A07F;">Redesign, and go again</span></div>
-</div>
-</div>
 </section>
 
 <a href="#contact" class="compass-link" aria-label="Continue to Trailhead" style="display: flex; align-items: center; gap: 24px; height: 120px; padding: 0 80px; text-decoration: none; color: #1F2A24;">
@@ -429,7 +468,7 @@ a{color:#A8431F}a:hover{color:#7E3015}
 <div style="display: flex; flex-direction: column; gap: 20px; max-width: 760px;">
 <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #E9A07F;">06 — Trailhead</div>
 <h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 64px; line-height: 1.05; font-weight: 600; letter-spacing: -0.02em;">Heading somewhere interesting? I'd love to come along.</h2>
-<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C9D0C5;">Open to internships and research in hardware, climate tech, SWE and startups.</p>
+
 </div>
 <div style="display: flex; flex-direction: column; gap: 14px; min-width: 300px;">
 <a href="mailto:alina.soh@duke.edu" style="display: flex; align-items: center; justify-content: space-between; min-height: 56px; padding: 0 24px; border-radius: 999px; background: #C2502A; color: #FFFFFF; text-decoration: none; font-weight: 500;">alina.soh@duke.edu<span aria-hidden="true">→</span></a>
